@@ -1,0 +1,42 @@
+extends base.pug
+
+block scripts
+    script(src="/static/index.js")
+
+block style 
+    style 
+        include ../static/style.css
+        include ../static/styleContact.css
+
+block content
+    div.container
+        h1 Contact Us!
+        form(action="https://formsubmit.co/vickyku135@gmail.com", method="post" class="myForm")
+            input(type="hidden" name="_next" value="http://localhost:3000/contact")
+            input(type="text", class="myInput", name="name", placeholder="Enter your name : ")
+            input(type="phone", class="myInput", name="phone", placeholder="Enter your phone no. : ")
+            input(type="email", class="myInput", name="email", placeholder="Enter your email : ")
+            input(type="text", class="myInput", name="address", placeholder="Enter your address : ")
+            textarea(type="text", class="myInput", name="desc", placeholder="Enter your concern : ")
+            button(class="btn")
+                | Submit
+
+    div.sns 
+        h1 Connect with us through Social Media!
+        nav#navbar1 
+            ul 
+                div#logo1
+                    img.smi(src="/static/ig.png") 
+                li #[a(href="https://www.instagram.com/ar_films_studio/") ar_films_studio]  
+        nav#navbar1 
+            ul 
+                div#logo1
+                    img.smi(src="/static/fb.png") 
+                li #[a(href="https://www.facebook.com/AR-Films-photography-108376928116688/") AR Film's photography] 
+        nav#navbar1 
+            ul 
+                div#logo1
+                    img.smi(src="/static/em.png") 
+                li #[a(href="/contact") arfilmsstudio8774@gmail.com] 
+            
+            

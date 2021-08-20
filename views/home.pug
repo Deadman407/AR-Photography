@@ -1,0 +1,162 @@
+extends base.pug
+
+block scripts
+    script(src="/static/index.js")
+
+block style 
+    style 
+        include ../static/style.css
+
+block content
+    section#introSection 
+        div.img 
+            div Welcome to AR Film's Studio 
+            div.small We don't take a photograph, we make it. 
+
+    section#workhead
+        div.typewriter
+            .typewriter-text Our Domains of work
+
+    section#workSection1 
+        div.card
+          div.card-box1 
+            div.card-head
+                h3 Wedding Photography
+            div.card-content
+                p Just be prepared to look back in a few years on yourself, and your photos, and laugh.
+        div.card 
+          div.card-box2
+            div.card-head
+                h3 Pre-Wedding Shoot
+            div.card-content
+                p A successful marriage requires falling in love many times, always with the same person.
+
+    section#workSection2 
+        div.card
+          div.card-box3
+            div.card-head
+                h3 Model Shoot
+            div.card-content
+                p If you believe in yourself and feel confident in yourself, you can do anything.
+        div.card 
+          div.card-box4
+            div.card-head
+                h3 Event Photography
+            div.card-content
+                p Life is like a camera, just focus on what's important and capture the good times.
+
+    section#pfhead
+        div.typewriter
+            .typewriter-text Some Notable Works       
+
+    section#pfcontent
+        div.container1
+                div.img1
+                    img.align-left.slide-in(src='../static/1.jpg')
+                div.img2
+                    img.align-right.slide-in(src='../static/2.jpg') 
+        div.container2
+                div.img3
+                    img.align-left.slide-in(src='../static/3.jpg')
+        div.container3
+                div.img4
+                    img.align-left.slide-in(src='../static/4.jpg')
+                div.img5
+                    img.align-right.slide-in(src='../static/5.jpg')
+        div.container4
+                div.img6
+                    img.align-left.slide-in(src='../static/6.jpg') 
+        div.container5
+                div.img7
+                    img.align-left.slide-in(src='../static/5.jpg')
+                div.img8
+                    img.align-right.slide-in(src='../static/7.jpg')      
+        script.
+            function debounce(func, wait = 10, immediate = true) {
+                var timeout;
+                return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+                };
+                };
+                const sliderImages = document.querySelectorAll('.slide-in');
+                function checkSlide() {
+                sliderImages.forEach(sliderImage => {
+                // half way through the image
+                const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+                // bottom of the image
+                const imageBottom = sliderImage.offsetTop + sliderImage.height;
+                const isHalfShown = slideInAt > sliderImage.offsetTop;
+                const isNotScrolledPast = window.scrollY < imageBottom;
+                if (isHalfShown && isNotScrolledPast) {
+                sliderImage.classList.add('active');
+                } else {
+                sliderImage.classList.remove('active');
+                }
+                });
+                }
+                window.addEventListener('scroll', debounce(checkSlide));
+            
+        style.
+            .container1{
+                display: flex;
+                flex-direction: row;
+                margin-top: 20px;
+            }
+            .img1{
+                margin: 20px;
+            }
+            .img2{
+                margin: 20px;
+            }
+            .img3{
+                margin: 20px;
+            }
+            .container3{
+                display: flex;
+                flex-direction: row;
+                margin-top: 20px;
+            }
+            .img4{
+                margin: 20px;
+            }
+            .img5{
+                margin: 20px;
+            }
+            .img6{
+                margin: 20px;
+            }
+            .container5{
+                display: flex;
+                flex-direction: row;
+                margin-top: 20px;
+            }
+            .img7{
+                margin: 20px;
+            }
+            .img8{
+                margin: 20px;
+            }
+            .slide-in {
+            opacity: 0;
+            transition: all .4s;
+            }
+            .align-left.slide-in {
+            transform: translateX(-5%) scale(0.95);
+            }
+            .align-right.slide-in {
+            transform: translateX(5%) scale(0.95);
+            }
+            .slide-in.active {
+            opacity: 1;
+            transform: translateX(0%) scale(1);
+            }
+
+    

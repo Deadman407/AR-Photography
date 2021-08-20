@@ -1,0 +1,53 @@
+extends base.pug
+
+block scripts
+    script(src="/static/index.js")
+
+block style 
+    style 
+        include ../static/style.css
+
+block content
+    section#aboutimg
+        img#imgab(src='../static/Abhash 1.jpg' alt='AR Film Studio')
+
+    section#aboutText 
+            div.typewriter
+                .typewriter-text Know more About Us!
+            div.aboutTxt
+                p
+                    | Hello! Everyone, Abhash Nayak this side, the fortunate owner of AR Phoptography Studio.
+                    br
+                    |     Capturing the most important moments of your life is what we do best.  Whether you
+                    br
+                    |     are sharing your ceremony vows, gathered for a family reunion, or documenting an
+                    br
+                    |     important business event, we are committed to a personable and enjoyable experience with you.
+                    br
+                    |     We specialize in wedding photography, corporate, family and senior portraits,
+                    br
+                    |     often traveling to your destination to capture the perfect moment in the perfect
+                    br
+                    |     place. We will be there with you every step of the way to guarantee your special
+                    br
+                    |     moments are captured for all time. To us photography is about people being real
+                    br
+                    |     and then letting us paint a picture of that moment to remember it forever.
+                    br
+                    |     This is the story that matters most: real people, real stories, real moments.
+                    br
+                    |     Please take a few minutes to get to know us. We would love to visit with
+                    br
+                    |     you by phone or in person and talk about your wedding, event, portrait
+                    br
+                    |     session or video project. Please reach out to us through the Contact Page.
+
+
+    section#aboutimg
+        div.typewriter
+            .typewriter-text This is Where You can find Us!
+        img#imgm(src='../static/map.jpg' alt='AR Film Studio')
+        
+    
+
+            
