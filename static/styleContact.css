@@ -13,8 +13,8 @@ h1{
     align-items: center;
     flex-direction: column;
     opacity: 0.8;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 .myForm{
