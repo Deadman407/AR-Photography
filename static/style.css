@@ -310,6 +310,15 @@
     text-align: center;
 }
 
+#footer p a{
+    color: white;
+    text-decoration: none;
+}
+
+#footer p a:hover{
+    color: rgb(75, 233, 233);
+}
+
 #aboutText{
     width: 85%;
     margin-left: 7%;
